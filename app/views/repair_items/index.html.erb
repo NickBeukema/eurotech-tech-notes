@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Repair Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cause</th>
+      <th>Correction</th>
+      <th>Parts</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @repair_items.each do |repair_item| %>
+      <tr>
+        <td><%= repair_item.cause %></td>
+        <td><%= repair_item.correction %></td>
+        <td><%= repair_item.parts %></td>
+        <td><%= link_to 'Show', repair_item %></td>
+        <td><%= link_to 'Edit', edit_repair_item_path(repair_item) %></td>
+        <td><%= link_to 'Destroy', repair_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Repair item', new_repair_item_path %>

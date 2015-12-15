@@ -1,0 +1,29 @@
+<%= form_for(@repair_detail) do |f| %>
+  <% if @repair_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@repair_detail.errors.count, "error") %> prohibited this repair_detail from being saved:</h2>
+
+      <ul>
+      <% @repair_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :repair_order %><br>
+    <%= f.number_field :repair_order %>
+  </div>
+  <div class="field">
+    <%= f.label :recommendations %><br>
+    <%= f.text_area :recommendations %>
+  </div>
+  <div class="field">
+    <%= f.label :maintenance %><br>
+    <%= f.text_area :maintenance %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
