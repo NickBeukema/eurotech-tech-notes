@@ -65,3 +65,8 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
+
+Capybara.register_driver :selenium_default do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :firefox, :profile => "default")
+end
+Capybara.default_driver = :webkit

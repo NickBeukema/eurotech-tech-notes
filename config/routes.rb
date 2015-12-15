@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :repair_order_details
   resources :repair_orders
   root 'repair_orders#index'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215152241) do
+ActiveRecord::Schema.define(version: 20151215161848) do
+
+  create_table "repair_order_details", force: :cascade do |t|
+    t.text     "cause",           limit: 65535
+    t.text     "correction",      limit: 65535
+    t.text     "parts",           limit: 65535
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "repair_order_id", limit: 4
+  end
 
   create_table "repair_orders", force: :cascade do |t|
     t.integer  "number",          limit: 4
